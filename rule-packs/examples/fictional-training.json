@@ -1,0 +1,15 @@
+[
+  {
+    "name": "FICTIONAL training example — not a regulation",
+    "schemaVersion": 1,
+    "jurisdiction": "XX — fictional competition",
+    "season": "2026-27 (example)",
+    "source": "https://example.test/fictional-rules",
+    "lastVerified": null,
+    "verificationStatus": "UNVERIFIED",
+    "validFrom": "2026-01-01",
+    "validTo": "2027-12-31",
+    "checks": [{ "kind": "age", "minimum": 18, "maximum": 30 }],
+    "notes": "Arbitrary teaching values only. Not a FIFA, national association or league regulation."
+  }
+]

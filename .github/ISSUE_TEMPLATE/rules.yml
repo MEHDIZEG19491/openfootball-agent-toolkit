@@ -1,0 +1,23 @@
+name: Rule-pack proposal
+description: Propose a sourced rule schema or reviewed pack, never an unsupported legal claim.
+labels: [rules-data]
+body:
+  - type: input
+    id: scope
+    attributes:
+      label: Jurisdiction, competition, season and effective dates
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Primary source and verification
+      description: URL, exact section/page, verification date, exceptions and review status. Do not paste proprietary texts.
+    validations:
+      required: true
+  - type: textarea
+    id: cases
+    attributes:
+      label: Proposed structured checks and fictional boundary cases
+    validations:
+      required: true

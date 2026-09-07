@@ -1,0 +1,21 @@
+name: Workflow improvement
+description: Explain a real workflow problem and a bounded proposal.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and affected workflow
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed behavior and acceptance criteria
+      description: Include missing-data, privacy, localization and access implications.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and supporting evidence

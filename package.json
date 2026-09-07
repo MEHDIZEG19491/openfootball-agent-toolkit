@@ -1,0 +1,47 @@
+{
+  "name": "openfootball-agent-toolkit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted football representation and recruitment tools with explainable matching.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "node scripts/develop.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/start.mjs",
+    "setup": "node scripts/setup.mjs",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
+    "test:coverage": "node --import tsx --test --test-concurrency=1 --experimental-test-coverage tests/*.test.ts",
+    "test:integration": "node --import tsx --test --test-concurrency=1 tests/integration/*.test.ts",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run test:integration",
+    "audit:dependencies": "npm audit --audit-level=high",
+    "release:prepare": "node scripts/prepare-release.mjs",
+    "community:prepare": "node scripts/community.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "backup": "node scripts/backup.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "10.10.0",
+    "eslint-config-next": "16.3.4",
+    "prettier": "3.9.6",
+    "tailwindcss": "4.2.1",
+    "tsx": "4.22.1",
+    "typescript": "5.9.3"
+  }
+}

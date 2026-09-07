@@ -1,0 +1,26 @@
+name: Bug report
+description: Report reproducible behavior using fictional data.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities use SECURITY.md. Never attach secrets, real player data or database files."
+  - type: input
+    id: version
+    attributes:
+      label: Version and environment
+      description: Release/commit, Node or Docker, OS, browser if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include a minimal fictional example and expected vs actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted evidence
+      description: Error code or fictional screenshot; no personal records or credentials.

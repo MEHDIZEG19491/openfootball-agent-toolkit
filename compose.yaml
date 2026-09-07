@@ -1,0 +1,24 @@
+services:
+  toolkit:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      APP_ORIGIN: ${APP_ORIGIN:-http://localhost:3000}
+      # Blank is allowed after first-owner setup; unauthenticated setup then rejects.
+      BOOTSTRAP_TOKEN: ${BOOTSTRAP_TOKEN:-}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+    volumes:
+      - toolkit-data:/app/data
+      - toolkit-backups:/app/private/backups
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,noexec,nosuid
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  toolkit-data:
+  toolkit-backups:

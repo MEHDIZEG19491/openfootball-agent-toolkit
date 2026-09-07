@@ -1,0 +1,11 @@
+node_modules
+.next
+release
+coverage
+.test-output
+package-lock.json
+next-env.d.ts
+LICENSE
+data
+private
+docs/OPENAI-OSS-APPLICATION.md

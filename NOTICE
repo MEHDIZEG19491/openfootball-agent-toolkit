@@ -1,0 +1,11 @@
+OpenFootball Agent Toolkit
+Copyright 2026 OpenFootball Agent Toolkit contributors.
+
+Initiated by Mahdi Zeghouani (MTRANSPRO). This is an independent open-source
+software project. No affiliation with, certification by, or endorsement from
+FIFA, any football association, or OpenAI is implied.
+
+Initial implementation prepared with AI assistance. Maintainers and contributors
+remain responsible for reviewing, validating, and maintaining contributions.
+Third-party packages retain their own licenses; see package-lock.json and
+docs/THIRD-PARTY.md.

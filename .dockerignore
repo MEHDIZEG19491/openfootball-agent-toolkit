@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.github
+.env
+.env.*
+!.env.example
+data
+private
+release
+coverage
+.test-output
+docs/OPENAI-OSS-APPLICATION.md
+*.sqlite*
+*.db*
+*.log
+*.tsbuildinfo

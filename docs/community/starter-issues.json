@@ -1,0 +1,200 @@
+{
+  "labels": [
+    {
+      "name": "good first issue",
+      "color": "7057ff",
+      "description": "Small bounded contribution with guidance"
+    },
+    {
+      "name": "help wanted",
+      "color": "008672",
+      "description": "Additional contributor support welcome"
+    },
+    {
+      "name": "bug",
+      "color": "d73a4a",
+      "description": "Reproducible incorrect behavior"
+    },
+    {
+      "name": "enhancement",
+      "color": "a2eeef",
+      "description": "Useful product improvement"
+    },
+    {
+      "name": "documentation",
+      "color": "0075ca",
+      "description": "Documentation and examples"
+    },
+    {
+      "name": "security",
+      "color": "b60205",
+      "description": "Public hardening work; private vulnerabilities follow SECURITY.md"
+    },
+    {
+      "name": "translation",
+      "color": "5319e7",
+      "description": "Language and localization"
+    },
+    {
+      "name": "rules-data",
+      "color": "0e8a16",
+      "description": "Rule-pack schema and provenance"
+    },
+    {
+      "name": "frontend",
+      "color": "1d76db",
+      "description": "User interface and accessibility"
+    },
+    {
+      "name": "backend",
+      "color": "0052cc",
+      "description": "Persistence and server behavior"
+    },
+    {
+      "name": "testing",
+      "color": "bfd4f2",
+      "description": "Behavioral verification"
+    },
+    {
+      "name": "operations",
+      "color": "c5def5",
+      "description": "Installation, backup and releases"
+    }
+  ],
+  "milestones": [
+    {
+      "title": "v0.1 — Core platform",
+      "description": "Complete initial-release checks and publish a truthful working MVP."
+    },
+    {
+      "title": "v0.2 — Matching and rule packs",
+      "description": "Refine matching, pack lifecycle, accessibility and data scale from pilot evidence."
+    },
+    {
+      "title": "v0.3 — Integrations/API",
+      "description": "Scoped integrations, adapter contracts and optional PostgreSQL."
+    },
+    {
+      "title": "v0.4 — Recruitment intelligence",
+      "description": "Private operational reports with documented aggregate definitions."
+    },
+    {
+      "title": "v1.0 — Stable OSS release",
+      "description": "Supported stable schemas, upgrades and independently reviewed deployment."
+    }
+  ],
+  "issues": [
+    {
+      "id": "release-checks",
+      "title": "Verify Docker installation and restore on a clean host",
+      "labels": ["operations", "testing", "help wanted"],
+      "milestone": "v0.1 — Core platform",
+      "body": "## Problem\n\nThe image configuration has not been run in the initial build environment. Verify the actual Compose workflow before public release.\n\n## Acceptance criteria\n\n- Record OS/engine versions.\n- complete setup/login/CRUD in Docker.\n- back up and restore into a new volume.\n- test non-root/read-only runtime.\n- document defects without private data.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "arabic-review",
+      "title": "Review Arabic football terminology and mixed-direction fields",
+      "labels": ["translation", "good first issue", "frontend"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nThe initial Arabic dictionary needs review by a football professional and native reader.\n\n## Acceptance criteria\n\n- Review labels in i18n.ts.\n- propose specific corrected wording.\n- keep key parity.\n- test a Latin player name, Arabic notes and ISO dates at mobile width.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "french-errors",
+      "title": "Translate schema validation diagnostics into French and Arabic",
+      "labels": ["translation", "frontend", "help wanted"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nError headings are translated but detailed schema messages remain technical English.\n\n## Acceptance criteria\n\n- Map stable error codes rather than parsing English text.\n- show field-specific corrections in all locales.\n- test nested cap-field paths and unknown codes.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "keyboard-dialog",
+      "title": "Verify and improve keyboard focus for record and import dialogs",
+      "labels": ["frontend", "testing", "good first issue"],
+      "milestone": "v0.1 — Core platform",
+      "body": "## Problem\n\nNative dialogs are used but assistive-technology behavior needs independent verification.\n\n## Acceptance criteria\n\n- Test tab trapping, Escape and focus return.\n- exercise import preview errors and pending states.\n- provide browser/AT evidence and fix any issue with a regression scenario.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "mobile-capture",
+      "title": "Add real fictional-data screenshots at desktop and mobile widths",
+      "labels": ["documentation", "good first issue"],
+      "milestone": "v0.1 — Core platform",
+      "body": "## Problem\n\nREADME deliberately has placeholders rather than fabricated screenshots.\n\n## Acceptance criteria\n\n- Capture the actual reviewed app at 1440 and 375 pixels and Arabic RTL.\n- use only bundled fictional records.\n- include alt text, version and viewport.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "csv-guide",
+      "title": "Add a worked multilingual CSV import example",
+      "labels": ["documentation", "good first issue", "testing"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nNew contributors benefit from a concrete round trip with commas, quotes and multiple nationalities.\n\n## Acceptance criteria\n\n- Add fictional CSV and JSON pairs.\n- demonstrate import order and UUID relationships.\n- test quote/newline/formula handling.\n- no real sports records.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "rule-fixtures",
+      "title": "Add boundary fixtures for an additional hypothetical rule combination",
+      "labels": ["rules-data", "testing", "good first issue"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nRule packs must remain explainable when age and cap windows interact.\n\n## Acceptance criteria\n\n- Use clearly fictional values and example.test sources.\n- test exact birthdays and window endpoints.\n- test UNVERIFIED/VERIFIED/HISTORICAL behavior.\n- do not claim a real regulation.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "rule-review",
+      "title": "Design a community rule-pack provenance and review record",
+      "labels": ["rules-data", "documentation", "help wanted"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nAn owner-controlled VERIFIED field is not independent verification.\n\n## Acceptance criteria\n\n- Propose reviewer/source section/correction history fields.\n- document re-verification triggers and disagreements.\n- include schema migration and tests before implementation.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "pagination",
+      "title": "Add paginated collections and complete streaming exports",
+      "labels": ["backend", "enhancement", "help wanted"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nLists and matching load full active collections; no scale guarantee is currently made.\n\n## Acceptance criteria\n\n- Measure a disclosed fictional dataset.\n- design stable cursors and filtered counts.\n- ensure exports remain complete.\n- test concurrent inserts and access checks.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "archive-tools",
+      "title": "Add owner-controlled archive restore and retention workflow",
+      "labels": ["backend", "security", "enhancement"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nArchive hides records but there is no UI restore or erasure procedure.\n\n## Acceptance criteria\n\n- Separate restore from irreversible deletion.\n- validate dependent references.\n- audit actions without retaining erased content.\n- document backup implications and test both roles and conflicts.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "account-recovery",
+      "title": "Design secure owner recovery and optional MFA",
+      "labels": ["security", "backend", "help wanted"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nThe MVP has no automated password recovery or second factor.\n\n## Acceptance criteria\n\n- Threat-model hostile setup/recovery requests and stolen backups.\n- choose a locally controlled recovery mechanism.\n- revoke sessions after recovery.\n- add abuse tests and operator guidance.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "coach-matching",
+      "title": "Implement explainable coach-to-opportunity matching",
+      "labels": ["backend", "enhancement", "help wanted"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nCoach records exist, but only players are matched in v0.1.\n\n## Acceptance criteria\n\n- Propose a coach opportunity schema.\n- compare licences, languages, regions, systems and salary with explicit unknowns.\n- use fictional fixtures and all three UI translations.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "postgres-adapter",
+      "title": "Define repository contracts and a PostgreSQL adapter",
+      "labels": ["backend", "enhancement"],
+      "milestone": "v0.3 — Integrations/API",
+      "body": "## Problem\n\nSome deployments will need concurrent replicas rather than one SQLite process.\n\n## Acceptance criteria\n\n- Introduce an async port without breaking domain schemas.\n- pass identical transaction/conflict/reference tests.\n- document migration preserving IDs and restoration before release.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "scoped-api",
+      "title": "Design scoped integration tokens and a versioned API",
+      "labels": ["backend", "security", "enhancement"],
+      "milestone": "v0.3 — Integrations/API",
+      "body": "## Problem\n\nThe internal session API is not a stable external integration contract.\n\n## Acceptance criteria\n\n- Document scopes, revocation, rate limits and versioning.\n- prohibit cross-organization access.\n- add tests for unauthorized and expired tokens.\n- provide a fictional client example.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "pilot-workflow",
+      "title": "Run a documented consent-based pilot with football professionals",
+      "labels": ["documentation", "help wanted"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nReal-world usefulness needs actual workflow feedback, not invented adoption metrics.\n\n## Acceptance criteria\n\n- Recruit willing testers without posting messages automatically.\n- measure setup and task completion with consent.\n- record anonymized findings, defects and withdrawals.\n- claim only observed participation.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    },
+    {
+      "id": "eslint-upstream",
+      "title": "Retire the temporary ESLint compatibility adapter",
+      "labels": ["backend", "good first issue", "testing"],
+      "milestone": "v0.2 — Matching and rule packs",
+      "body": "## Problem\n\nNext bundles plugins with older ESLint peer ranges; a narrow accessor adapter and legacy-peer-deps setting keep current lint checks working.\n\n## Acceptance criteria\n\n- Verify upstream ESLint 10 support.\n- remove adapter and peer setting together.\n- run clean install, full lint and CI.\n- report exact versions, keeping all rules enabled.\n\nPrepared starter task; this is not evidence of existing users or completed community work."
+    }
+  ]
+}
