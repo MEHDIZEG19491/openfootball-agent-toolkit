@@ -9,7 +9,8 @@ and the validation report before preparing a prerelease.
 
 ## Public-launch gates
 
-- Read docs/QUALITY-AUDIT.md and complete the pending Docker and browser checks; preserve the passing clean-install
+- Read docs/QUALITY-AUDIT.md and complete browser checks plus Docker record-write
+  and backup-restore verification; preserve the passing CI smoke, clean-install
   and dependency-audit gates.
 - Human maintainer reviews the AI-assisted implementation, sets their actual git
   identity, accepts maintainership and establishes a monitored private security
@@ -59,6 +60,13 @@ never use pull_request_target to execute untrusted code.
 
 `npm run community:prepare` generates a local preview of 16 substantive starter
 issues, 12 labels and five milestones. Read and edit the plan before applying it.
+
+The initial source publication opened all 16 starter issues with their topic
+labels. Each body records its intended milestone. The connected publishing tool
+does not expose milestone creation, so the five milestone objects are still
+pending. The script below creates missing milestones but preserves existing
+issues; assign those existing issues to their recorded milestone in GitHub after
+running it. Existing label colors and descriptions are also preserved.
 
 To apply it to the **actual chosen repository**, an authorized maintainer may run:
 

@@ -1,7 +1,8 @@
 # v0.1.0 quality review — 7 September 2026
 
-**Outcome: functioning local MVP and reviewable source package. Not a declaration
-of production readiness, public launch, independent audit or universal 90/100 quality.**
+**Outcome: published MVP source, passing initial GitHub CI and a reviewable source
+package. Not a declaration of production readiness, independent audit or universal
+90/100 quality.**
 
 This is an internal engineering self-assessment of the AI-assisted bootstrap.
 Numbers below are subjective readiness estimates, not certification, measured
@@ -23,15 +24,37 @@ Areas without direct verification are deliberately not given a passing 90.
 | Install resolution             | `npm ci --offline --ignore-scripts --dry-run` passed                                                                                                                                                                                                                                               |
 | Fresh isolated install         | Passed: extracted the public source ZIP into a fresh directory, installed from the lockfile, then passed lint, typecheck, all 46 unit/service tests, build and the HTTP integration scenario                                                                                                       |
 | Fresh npm advisory audit       | Passed on 7 September 2026: npm reported 0 known vulnerabilities across all severity levels in the current lockfile                                                                                                                                                                                |
-| Docker runtime                 | Configuration and CI smoke job prepared; not executed here because Docker engine is unavailable                                                                                                                                                                                                    |
+| Docker runtime                 | GitHub CI passed the Docker build, Compose startup and health endpoint; setup/record writes and backup restoration inside Docker remain unverified                                                                                                                                                 |
 | Browser/assistive technology   | Not executed; HTTP/SSR tests do not validate interactive browser behavior or WCAG conformance                                                                                                                                                                                                      |
-| GitHub CI/release/community    | Files and preview prepared; no remote run, new repository, release, issues, labels or milestones created                                                                                                                                                                                           |
+| GitHub CI/release/community    | Public repository populated; initial CI passed; 16 starter issues opened with topic labels. Five milestone objects and a versioned release remain pending                                                                                                                                          |
 
 Fresh installation and advisory checks were initially unavailable, then completed
 after access was confirmed. The source archive itself was extracted and tested
 in a clean directory; this validates the delivered file selection as well as the
 working checkout. The advisory result is a dated snapshot of known reports, not
-proof that the software has no vulnerabilities. Docker and browser checks remain open.
+proof that the software has no vulnerabilities. The initial GitHub CI run also
+passed Docker build/startup/health checks. Docker record-write and restore checks,
+interactive browser checks and assistive-technology verification remain open.
+
+## Public source publication — 7 September 2026
+
+- [Repository](https://github.com/MEHDIZEG19491/openfootball-agent-toolkit): created
+  by the project owner, then populated with 107 public source files. The uploaded
+  Git tree exactly matched the reviewed local snapshot. No private preparation,
+  environment secrets, databases or backups were included.
+- [Initial CI run](https://github.com/MEHDIZEG19491/openfootball-agent-toolkit/actions/runs/34166829970)
+  succeeded for source commit `1359db5b0179ff7c495d30f0f660626b1b559747`.
+  The `verify` job passed a fresh install, formatting, lint, types, 46 unit/service
+  tests, production build and the HTTP integration scenario. The `docker` job
+  passed Compose build/startup, the health endpoint and teardown. This is a smoke
+  check, not evidence of Docker backup restoration or browser interaction.
+- [Sixteen starter issues](https://github.com/MEHDIZEG19491/openfootball-agent-toolkit/issues)
+  were opened with topic labels and acceptance criteria. Five intended milestones
+  are recorded in their bodies; milestone objects were not created because the
+  connected publishing tool does not expose that operation.
+- No versioned GitHub release or hosted application was created. Branch protection,
+  monitored security reporting, human review and real pilot evidence remain open.
+  Dependabot-generated pull requests are proposals, not adopted changes or users.
 
 Node unit-coverage output: **96.51% lines / 87.96% branches / 94.12% functions among
 loaded files**. Matching alone: **95.20% lines / 88.89% branches**. These figures
@@ -44,19 +67,19 @@ not whole-application or browser coverage. No latency/throughput benchmark is cl
 self-assessment. Each sub-90 area received concrete improvements, but outstanding
 evidence requirements prevent honestly rounding every category up to 90.
 
-| Category               | Before | After | Work completed / remaining evidence                                                                                                                                                            |
-| ---------------------- | -----: | ----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Code quality           |     80 |    91 | Strict types, reusable schemas/layers, formatting, conflict handling; fixed SQLite null-prototype serialization discovered by real HTTP test                                                   |
-| Documentation          |     62 |    94 | Install/user/import/matching/API/privacy/deployment/localization/release guides, Arabic start guide, explicit scope and provenance                                                             |
-| Developer experience   |     70 |    90 | Generated private setup, pinned lockfile, production start wrapper and browser assets; extracted-source install/full checks passed on Linux/Node 24; Docker still needs verification           |
-| Testing                |     65 |    88 | Added security, transactional failure, parallel login, backup and real HTTP tests; browser interaction, AT and clean-host Docker remain                                                        |
-| Security               |     68 |    89 | Nonce CSP, strict origin/body checks, revocation, concurrent throttle fix, safe CSV and release exclusions; fresh advisory audit reports 0 known vulnerabilities; independent review remains   |
-| Accessibility          |     68 |    84 | Semantic structure/dialogs, labels, skip link, text statuses, RTL, keyboard-scrollable criteria, stronger input boundaries; real keyboard/AT/zoom checks pending                               |
-| UI/UX                  |     72 |    87 | Responsive navy/cobalt workspace, coherent forms/cards, localized empty/error states, resource links, import confirmation and readable criterion explanations; real-device/user review pending |
-| Open-source readiness  |     60 |    86 | Recognized license, governance, security/conduct policy, workflows/release notes and reproducible source packaging; actual repository settings and public launch still needed                  |
-| Contribution readiness |     65 |    91 | Sixteen bounded issues with acceptance criteria, twelve labels, five milestones, templates, contribution and translation guides; maintainer must open monitored reporting routes               |
-| Real-world usefulness  |     65 |    85 | Working player-to-opportunity/pipeline/mandate/data-portability workflow; no evidence yet from real consenting pilot users                                                                     |
-| Maintainability        |     72 |    90 | Pure matching, documented storage seam, numbered initial migration, centralized validation and regression tests; PostgreSQL/pagination and upstream lint transition tracked                    |
+| Category               | Before | After | Work completed / remaining evidence                                                                                                                                                                            |
+| ---------------------- | -----: | ----: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Code quality           |     80 |    91 | Strict types, reusable schemas/layers, formatting, conflict handling; fixed SQLite null-prototype serialization discovered by real HTTP test                                                                   |
+| Documentation          |     62 |    94 | Install/user/import/matching/API/privacy/deployment/localization/release guides, Arabic start guide, explicit scope and provenance                                                                             |
+| Developer experience   |     70 |    90 | Generated private setup, pinned lockfile, production start wrapper and browser assets; extracted-source install/full checks and GitHub Docker smoke passed; Docker restore verification remains                |
+| Testing                |     65 |    88 | Added security, transactional failure, parallel login, backup and real HTTP tests; browser interaction, AT and Docker write/restore validation remain                                                          |
+| Security               |     68 |    89 | Nonce CSP, strict origin/body checks, revocation, concurrent throttle fix, safe CSV and release exclusions; fresh advisory audit reports 0 known vulnerabilities; independent review remains                   |
+| Accessibility          |     68 |    84 | Semantic structure/dialogs, labels, skip link, text statuses, RTL, keyboard-scrollable criteria, stronger input boundaries; real keyboard/AT/zoom checks pending                                               |
+| UI/UX                  |     72 |    87 | Responsive navy/cobalt workspace, coherent forms/cards, localized empty/error states, resource links, import confirmation and readable criterion explanations; real-device/user review pending                 |
+| Open-source readiness  |     60 |    86 | Recognized license, governance, security/conduct policy, workflows/release notes and reproducible source packaging; source published with passing CI; repository settings and reviewed prerelease still needed |
+| Contribution readiness |     65 |    91 | Sixteen bounded issues with acceptance criteria, twelve labels, five milestones, templates, contribution and translation guides; maintainer must open monitored reporting routes                               |
+| Real-world usefulness  |     65 |    85 | Working player-to-opportunity/pipeline/mandate/data-portability workflow; no evidence yet from real consenting pilot users                                                                                     |
+| Maintainability        |     72 |    90 | Pure matching, documented storage seam, numbered initial migration, centralized validation and regression tests; PostgreSQL/pagination and upstream lint transition tracked                                    |
 
 These scores must not be used to assert that the user-requested all-90 target is
 already achieved. The package is suitable for local evaluation and review while
@@ -84,8 +107,8 @@ The input border was darkened to exceed 3:1. These selected pairs meet the relev
 
 1. Keep install and dependency checks required in CI. Repeat the advisory audit
    when dependencies change and before publication; review any new findings.
-2. Run CI on the chosen independent repository, including actual Docker setup,
-   persistent writes and backup restore. Pin reviewed action/image digests.
+2. Preserve passing CI and extend Docker verification to owner setup, persistent
+   writes and backup restore. Pin reviewed action/image digests.
 3. Perform keyboard, mobile, RTL, zoom and screen-reader checks in actual browsers;
    add behavioral regression checks for observed failures.
 4. Enable and monitor private security/conduct reporting, configure branch

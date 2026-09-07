@@ -84,9 +84,10 @@ Visit the same setup URL. The default port is published **only on loopback**.
 The container runs as a non-root user; data and backups use named volumes.
 Never use `docker compose down --volumes` on an installation whose data you need.
 
-Docker is configured and has a CI smoke job, but could not be executed in the
-build workspace because no Docker engine was available. Run that job before
-relying on the image. Self-hosting with HTTPS: [deployment guide](docs/DEPLOYMENT.md).
+The [initial GitHub CI run](https://github.com/MEHDIZEG19491/openfootball-agent-toolkit/actions/runs/34166829970)
+passed the Docker build, Compose startup and health check on 7 September 2026.
+Setup, record writes and backup restoration inside Docker still need separate
+verification. Self-hosting with HTTPS: [deployment guide](docs/DEPLOYMENT.md).
 
 ## Configuration
 
@@ -155,9 +156,11 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md), the [code of conduct](CODE_OF_CONDUCT.m
 improve translations, keyboard usability, tests, documented rule schemas and
 imports. Do not submit private player data or unlicensed databases.
 
-Sixteen substantive starter issues, labels and milestones are prepared in
-`docs/community/`. They are plans, not claims of existing contributor activity.
-`npm run community:prepare` previews them without contacting GitHub.
+Sixteen substantive starter issues are open with topic labels in the issue tracker.
+The backlog source and five planned milestones are in `docs/community/`; GitHub
+milestone objects still need to be created and assigned. These tasks are not
+evidence of external contributions or adoption. `npm run community:prepare`
+previews the plan without contacting GitHub.
 
 [Repository](https://github.com/MEHDIZEG19491/openfootball-agent-toolkit) ·
 [Issue tracker](https://github.com/MEHDIZEG19491/openfootball-agent-toolkit/issues) ·
